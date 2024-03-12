@@ -44,25 +44,25 @@ const FormNewPass = () => {
         ev.preventDefault();
 
         axios.post('/v1/auth/password-set', fieldsValue)
-                .then((resp: any): void => {
-                    if(resp.data.error === 0) {
-                        setInfo({
-                            type: 'success',
-                            text: resp.data.detail
-                        });
-
-                        setTimeout(() => {
-                            window.location.href = window.location.href;
-                        }, 1000);
-                    }
-                })
-                .catch((error: any): void => {
-                    const responseData = error?.response?.data;
+            .then((resp: any): void => {
+                if(resp.data.error === 0) {
                     setInfo({
-                        type: 'error',
-                        text: responseData?.detail[0]?.error || responseData?.detail
-                    })
+                        type: 'success',
+                        text: resp.data.detail
+                    });
+
+                    setTimeout(() => {
+                        window.location.href = window.location.href;
+                    }, 1000);
+                }
+            })
+            .catch((error: any): void => {
+                const responseData = error?.response?.data;
+                setInfo({
+                    type: 'error',
+                    text: responseData?.detail[0]?.error || responseData?.detail
                 })
+            })
     } 
 
     const onChange = (name: string, value: string) => {

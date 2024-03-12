@@ -29,20 +29,20 @@ const FormForgotPass = ({toLogin, toNewPass}: FormForgotPassProps) => {
         ev.preventDefault();
 
         axios.post('/v1/auth/password-reset', fieldsValue)
-        .then((resp): void => {
-            if( resp.data.error === 0 ) {
-                setInfo({
-                    type: 'warning',
-                    text: resp.data.detail,
-                })
-            }
-        })
-        .catch((error): void => {
-            setInfo({
-                type: 'error',
-                text: 'Something went wrong. Please, try again!'
+            .then((resp): void => {
+                if( resp.data.error === 0 ) {
+                    setInfo({
+                        type: 'warning',
+                        text: resp.data.detail,
+                    })
+                }
             })
-        });
+            .catch((error): void => {
+                setInfo({
+                    type: 'error',
+                    text: 'Something went wrong. Please, try again!'
+                })
+            });
     }
 
     const onChange = (name: string, value: string) => {

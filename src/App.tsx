@@ -10,7 +10,7 @@ type FormsMap = Map<string, ReactElement>;
 function App() {
   const [searchParams] = useSearchParams();
   const isNewPass = Boolean(searchParams.get('secret') && searchParams.get('token'));
-const [ currentForm, setCurrentForm ] = useState(isNewPass ? 'newPass' : 'login');
+  const [ currentForm, setCurrentForm ] = useState(isNewPass ? 'newPass' : 'login');
   
   const forms: FormsMap = new Map([
     ['login', <FormLogin toForgotPass={() => setCurrentForm('forgotPass')} />],

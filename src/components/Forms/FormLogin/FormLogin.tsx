@@ -38,8 +38,7 @@ const FormLogin = ( {toForgotPass}: FormLogin ) => {
         if( cookies.__qencode_refresh_token ) {
             axios.post('/v1/auth/refresh-token', {
                 refresh_token: cookies.__qencode_refresh_token,
-            })
-            .then((resp: any): void => {
+            }).then((resp: any): void => {
                 if(resp.data.error === 0 && resp.data.access_token && resp.data.refresh_token) {
                     setCookies('__qencode_refresh_token', resp.data.refresh_token);
 
