@@ -1,0 +1,7 @@
+.CancelButton {
+    margin-top: -5px;
+}
+
+.FormForgotPass button[type="submit"] {
+    margin-top: 0;
+}

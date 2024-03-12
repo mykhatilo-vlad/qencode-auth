@@ -1,0 +1,8 @@
+.FormLoginPass {
+    display: grid;
+    gap: 15px;
+}
+
+.FormLoginForgot {
+    justify-self: end;
+}

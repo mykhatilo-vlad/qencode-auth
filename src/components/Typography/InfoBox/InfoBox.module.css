@@ -1,0 +1,13 @@
+.InfoBox {
+    padding: 0.5em 1em;
+    background-color: var(--type, lightgreen);
+    text-align: center;
+}
+
+.InfoBox.warning {
+    --type: yellow;
+}
+
+.InfoBox.error {
+    --type: lightcoral;
+}

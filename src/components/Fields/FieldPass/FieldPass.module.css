@@ -1,0 +1,17 @@
+.FieldPass {
+    position: relative;
+}
+
+.FieldPassInput {
+    padding-right: calc(1rem * 2 + 18px)
+}
+
+.ShowPass {
+    position: absolute;
+    right: 1rem;
+    bottom: 50%;
+    transform: translateY(50%);
+    padding: 0;
+    border: none;
+    line-height: 0;
+}
